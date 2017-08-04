@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Hangman</title>
+  <meta name="description" content="Hangman">
+  <meta name="author" content="Christopher Atkinson">
+
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Damion|Raleway" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!--<link rel="icon" type="image/png" href="assets/images/favicon.png">-->
+
+  <!-- Scripts -->
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!--Main Window-->
+    <div class="row">
+      <hr>
+      <!--Game Window-->
+      <div class="col col-lg-8 gamewindow">
+        <header>
+          <h1>Hangman</h1>
+        </header>
+        <div class="row mrg-t5">
+          <div class="col">
+            <img src="https://www.axure.com/c/attachments/forum/7-0-general-discussion/3919d1401387174-turn-placeholder-widget-into-image-maintain-interactions-screen-shot-2014-05-29-10.46.57-am.png">
+          </div>
+          <div class="row mrg-t1">
+            <div class="col">
+              <h3 id="inputSpace">Input text</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Side Window-->
+      <aside class="col col-lg-4 gamewindow">
+        <!--Subjects-->
+        <h2 class="mrg-t1"> - Used Letters - </h2>
+
+        <div class="row">
+          <div class="checkbox col col-lg-12">
+            <p id="graveyard" class="centertv">#graveyard</p>
+          </div>
+        </div>
+        <hr>
+
+        <!--Current Game-->
+        <h2> - Current Game - </h2>
+
+        <div class="row mrg-t1">
+          <div class="col col-lg-6">
+            <p class="mrg-l3">Subject </p>
+          </div>
+          <div class="col col-lg-6">
+            <p id="subject" class="centertv">#subject</p>
+          </div>
+        </div>
+
+        <div class="row mrg-t1">
+          <div class="col col-lg-6">
+            <p class="mrg-l3">Word Length</p>
+          </div>
+          <div class="col col-lg-6">
+            <p id="wordLen" class="centertv">#wordLength</p>
+          </div>
+        </div>
+
+        <div class="row mrg-t1">
+          <div class="col col-lg-6">
+            <p class="mrg-l3">Tries</p>
+          </div>
+          <div class="col col-lg-6">
+            <p id="tries" class="centertv">#tries</p>
+          </div>
+        </div>
+
+        <div class="row mrg-t1">
+          <div class="col col-lg-6">
+            <p class="mrg-l3">Tries Remaining</p>
+          </div>
+          <div class="col col-lg-6">
+            <p id="triesRem" class="centertv">#triesRem</p>
+          </div>
+        </div>
+        <hr>
+
+        <!--Stats-->
+        <h2> - Record - </h2>
+        <div class="row mrg-t1 mrg-b2">
+          <div class="col col-lg-6">
+            <p class="centert">Wins</p>
+            <p class="centertv" id="wins">#wins</p>
+          </div>
+          <div class="col col-lg-6">
+            <p class="centert">Losses</p>
+            <p class="centertv" id="losses">#losses</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div class="row">
+      <hr>
+      <p class= "col col-lg-12 centert">Use the keyboard to make your selection</p>
+    </div>
+  </div>
+
+  <!-- Scripts-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script src="assets/js/hangman.js"></script>
+</body>
+
+</html>

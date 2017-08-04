@@ -1,0 +1,116 @@
+/* Typography */
+
+h1{
+    font-family: 'Damion', cursive;
+    font-size: 3em;
+    color: #EEE;
+    margin-top: 0em;
+}
+
+h2{
+    font-family: 'Damion', cursive;
+    font-size: 1.6em;
+    color: #EEE;
+    text-align: center;
+    margin: .2em 0em .2em 0em;
+}
+
+h3{
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;
+    letter-spacing: .5em;
+    color: #EEE;
+    text-align: center;
+}
+
+p{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    color: #EEE;
+}
+
+.centert{
+    text-align: center;
+}
+
+.centertv{
+    text-align: center;
+    color: orange;
+}
+
+/* Containers */
+
+body{
+    background-color: #262A30;
+    margin-top: 5%;
+}
+
+aside{
+    border: .01em solid #EEE;
+}
+
+label{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    color: #EEE;
+}
+
+.gamewindow{
+    min-height: 10em;
+}
+
+.checkbox+.checkbox, .radio+.radio {
+    margin-top: 10px;
+}
+
+.keyboard{
+    text-align: center;
+}
+
+.btn-default, .btn-default:focus, .btn-default:focus{
+    margin: .5em;
+    color: #EEE;
+    font-weight: 100;
+    letter-spacing: .1em;
+    background-color: transparent;
+    border: .01em solid #EEE;
+    min-width: 2.5em;
+}
+
+.btn-default:hover{
+    color: orange;
+    border: .01em solid orange;
+    background-color: transparent;
+}
+
+#graveyard{
+    margin: 0;
+    letter-spacing: 1em;
+}
+
+/* Elements */
+img {
+    border: 0;
+    display: block;
+    margin: auto;
+    width: 40%;
+    height: 40%;
+}
+
+/* Adjustors */
+
+.mrg-t1{
+    margin-top: 1em;
+}
+
+.mrg-t5{
+    margin-top: 5em;
+}
+
+.mrg-b2{
+    margin-bottom: 2em;
+}
+
+.mrg-l3{
+    margin-left: 3em;
+}
