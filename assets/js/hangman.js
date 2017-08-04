@@ -16,9 +16,9 @@ let hangman = {
     losses: 0,
 
     //Subjects
-    animals: ['bear', 'zebra', 'penguin', 'cougar'],
-    countries: ['argentina', 'mexico', 'switzerland'],
-    foods: ['quinoa', 'salad', 'cheese'],
+    animals: ['jaguar', 'zebra', 'penguin', 'cougar', 'kangaroo', 'lynx', 'orangutan', 'goose', 'kakapo', 'rhinoceros'],
+    countries: ['argentina', 'mexico', 'switzerland', 'aruba', 'burma', 'zimbabwe', 'pakistan', 'mozambique', 'liechtenstein', 'indonesia'],
+    foods: ['quinoa', 'chimichanga', 'etouffee', 'jambalaya', 'tabbouleh', 'pierogi', 'chim', 'spaghetti', 'lasagne', 'prosciutto'],
 
     updateDom: function (id, newval) {
         if (id === "graveyard") {
