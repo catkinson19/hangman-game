@@ -1,6 +1,3 @@
-//Todo
-//Fix the resizing of the graveyard
-
 //Element Map
 let gameGraveyard = document.getElementById('graveyard');
 let gameSubject = document.getElementById('subject');
@@ -10,6 +7,7 @@ let gameTriesRem = document.getElementById('triesRem');
 let gameWins = document.getElementById('wins');
 let gameLosses = document.getElementById('losses');
 let gameInputSpace = document.getElementById('inputSpace');
+let gameImage = document.getElementById('image');
 
 let hangman = {
 
@@ -18,7 +16,7 @@ let hangman = {
     losses: 0,
 
     //Subjects
-    animals: ['bear', 'zebra', 'penguin'],
+    animals: ['bear', 'zebra', 'penguin', 'cougar'],
     countries: ['argentina', 'mexico', 'switzerland'],
     foods: ['quinoa', 'salad', 'cheese'],
 
@@ -46,6 +44,9 @@ let hangman = {
         }
         else if (id === "inputSpace") {
             return gameInputSpace.innerHTML = newval;
+        }
+        else if (id === "image") {
+            return gameImage.src = newval;
         }
     },
 
@@ -114,26 +115,61 @@ let hangman = {
         triesRem -= 1;
         hangman.updateDom("tries", tries);
         hangman.updateDom("triesRem", triesRem);
-        //Call method here to swap image
+        hangman.swapImage()
     },
 
-    //Add method here to swap image
+    swapImage() {
+        if (tries === 0) {
+            hangman.updateDom("image", "../hangman-game/assets/images/empty.png");
+        }
+        else if (tries === 1) {
+            hangman.updateDom("image", "../hangman-game/assets/images/gallows.png");
+        }
+        else if (tries === 2) {
+            hangman.updateDom("image", "../hangman-game/assets/images/torso.png");
+        }
+        else if (tries === 3) {
+            hangman.updateDom("image", "../hangman-game/assets/images/rleg.png");
+        }
+        else if (tries === 4) {
+            hangman.updateDom("image", "../hangman-game/assets/images/lleg.png");
+        }
+        else if (tries === 5) {
+            hangman.updateDom("image", "../hangman-game/assets/images/rarm.png");
+        }
+        else if (tries === 6) {
+            hangman.updateDom("image", "../hangman-game/assets/images/larm.png");
+        }
+        else if (tries === 7) {
+            hangman.updateDom("image", "../hangman-game/assets/images/head.png");
+        }
+
+    },
+
 
     gameWin() {
         if (inputSpace.indexOf("_") === -1) {
-            alert("Congratulations, a winner is you!");
+            setTimeout(function () {
+                alert("Congratulations, a winner is you!");
+            }, 600);
             hangman.wins++;
             hangman.updateDom("wins", hangman.wins);
-            hangman.startGame();
+            setTimeout(function () {
+                hangman.startGame();
+            }, 600);
         }
     },
 
     gameLose() {
         if (triesRem === 0) {
-            alert("You have dishonored yourself.");
+            setTimeout(function () {
+                alert("You have dishonored yourself | Your word was " + word.toString().toUpperCase().split(",").join(""));
+            }, 600);
             hangman.losses++;
             hangman.updateDom("losses", hangman.losses);
-            hangman.startGame();
+            setTimeout(function () {
+                hangman.startGame();
+            }, 600);
         }
     },
 
@@ -154,7 +190,6 @@ let hangman = {
                         resultMatches.push(ind);
                         update = ind;
                         ind = word.indexOf(letter, ind + 1);
-                        console.log(resultMatches);
 
                         if (resultMatches.length > 0) {
                             console.log("Good Choice");
@@ -196,6 +231,7 @@ let hangman = {
         hangman.updateDom("tries", tries);
         hangman.updateDom("triesRem", triesRem);
         hangman.updateDom("inputSpace", hangman.renderArray(inputSpace));
+        hangman.swapImage();
 
         //Run game
         hangman.handlePickedLetter();
